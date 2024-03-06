@@ -286,9 +286,17 @@ public class MainActivity extends AppCompatActivity {
         Username = (TextView)this.findViewById(R.id.Username);
         Control_Button = (Button)this.findViewById(R.id.ControlMining);
     }
-    public void add_string_to_console(String string){
+    private StringBuilder consoleStringBuilder = new StringBuilder(); // Store console messages
+
+public void add_string_to_console(String string) {
+    consoleStringBuilder.append(string).append("\n"); // Append message and newline
+}
+
+public void updateConsole() {
+    if (consoleStringBuilder.length() > 0) {
         TextView to_add = new TextView(this);
-        to_add.setText(string);
+        to_add.setText(consoleStringBuilder.toString());
+        consoleStringBuilder.setLength(0); // Clear StringBuilder
 
         this.runOnUiThread(new Runnable() {
             @Override
@@ -297,6 +305,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+}
+    
     public void make_button_green(){
         this.runOnUiThread(new Runnable() {
             @Override

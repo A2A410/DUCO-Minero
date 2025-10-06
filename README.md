@@ -3,12 +3,12 @@
 Standalone multithreaded miner of DUCO for android.
 
 # Frequent Questions:
-When would i continue this? I don't know.
+I just continued now.
 
 # ToDo:
-rewrite mining part on c++
-rewrite java to kotlin
-add some design
+???
 
 # Done:
-...
+Rust with C/C++ Mining Core
+Rewritten from java to kotlin
+Added UI/UX Improvement 
